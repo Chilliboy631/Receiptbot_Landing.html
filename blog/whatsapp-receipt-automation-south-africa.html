@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WhatsApp Receipt Automation: How SA Small Businesses Ditch the Shoebox | SlipStack</title>
+<meta name="description" content="Snap a till slip on WhatsApp and it files itself. Here's how WhatsApp receipt automation works for South African small businesses — no app, no shoebox, no lost VAT.">
+<link rel="canonical" href="https://www.slipstack.co.za/blog/whatsapp-receipt-automation-south-africa.html">
+<meta name="robots" content="index,follow">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SlipStack">
+<meta property="og:title" content="WhatsApp Receipt Automation: How SA Small Businesses Ditch the Shoebox">
+<meta property="og:description" content="Snap a till slip on WhatsApp and it files itself — vendor, date, total and VAT, straight to your Google Drive, dashboard and accounting.">
+<meta property="og:url" content="https://www.slipstack.co.za/blog/whatsapp-receipt-automation-south-africa.html">
+<meta property="og:image" content="https://www.slipstack.co.za/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="SlipStack Blog" href="https://www.slipstack.co.za/blog/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1C6B47; --deep:#0F3D2B; --ink:#16241C; --paper:#F3ECDD; --paper2:#EAE2D0;
+    --terra:#C45B3C; --mint:#7FD4A8; --wa:#25D366;
+    --muted:#5C6A62; --line:#E1D8C5; --card:#fff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Hanken Grotesk',system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  a{color:var(--forest);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+  /* Header */
+  header.site{background:var(--deep);}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand .wm{font-family:'Dancing Script',cursive;font-weight:700;font-size:1.6rem;color:#fff;line-height:1;}
+  header.site nav a{color:#CFE3D8;text-decoration:none;font-weight:600;font-size:.92rem;margin-left:18px;}
+  header.site nav a:hover{color:#fff;}
+  /* Article */
+  article{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    margin:26px auto 34px;padding:40px 40px 44px;box-shadow:0 8px 30px rgba(22,36,28,.06);}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--terra);margin:0 0 10px;}
+  h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2.35rem;
+    line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;color:var(--ink);}
+  .byline{color:var(--muted);font-size:.9rem;margin:0 0 26px;padding-bottom:20px;border-bottom:1px solid var(--line);}
+  h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;
+    letter-spacing:-.015em;margin:38px 0 10px;color:var(--deep);}
+  h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.14rem;margin:26px 0 6px;color:var(--ink);}
+  p{margin:0 0 16px;}
+  ul,ol{margin:0 0 16px;padding-left:22px;}
+  li{margin:6px 0;}
+  strong{color:var(--ink);}
+  .lead{font-size:1.18rem;color:#2b3a31;}
+  /* Callout */
+  .callout{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--terra);
+    border-radius:12px;padding:16px 20px;margin:24px 0;}
+  .callout p{margin:0;}
+  /* Table */
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:20px 0;}
+  .tbl{width:100%;min-width:520px;border-collapse:collapse;margin:0;font-size:.96rem;overflow:hidden;
+    border:1px solid var(--line);border-radius:12px;}
+  .tbl th,.tbl td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .tbl thead th{background:var(--deep);color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.9rem;}
+  .tbl tbody tr:nth-child(even){background:#FBF9F3;}
+  .tbl tbody tr:last-child td{border-bottom:none;}
+  /* Steps */
+  .steps{list-style:none;padding:0;margin:20px 0;counter-reset:s;}
+  .steps li{position:relative;padding:2px 0 14px 46px;counter-increment:s;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;
+    background:var(--forest);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;
+    font-family:'Bricolage Grotesque',sans-serif;}
+  /* CTA */
+  .cta{background:linear-gradient(150deg,#0F3D2B,#1C6B47);color:#fff;border-radius:16px;
+    padding:30px 32px;margin:34px 0 8px;text-align:center;}
+  .cta h2{color:#fff;margin:0 0 8px;}
+  .cta p{color:#CFE3D8;margin:0 0 18px;}
+  .btn{display:inline-block;background:var(--wa);color:#08311D;font-weight:700;text-decoration:none;
+    padding:13px 26px;border-radius:12px;font-size:1rem;}
+  .btn:hover{filter:brightness(.96);}
+  /* FAQ */
+  .faq details{background:#FBF9F3;border:1px solid var(--line);border-radius:10px;padding:2px 16px;margin:10px 0;}
+  .faq summary{font-weight:700;cursor:pointer;padding:12px 0;font-family:'Bricolage Grotesque',sans-serif;color:var(--ink);}
+  .faq details p{padding-bottom:12px;margin:0;color:#33413a;}
+  /* Footer */
+  footer.site{background:var(--deep);color:#9DBBAA;margin-top:20px;}
+  footer.site .wrap{padding:26px 22px;font-size:.86rem;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;}
+  footer.site a{color:#CFE3D8;text-decoration:none;}
+  @media(max-width:640px){article{padding:26px 20px;border-radius:0;margin:16px auto;}h1{font-size:1.9rem;}}
+</style>
+<!-- Article + FAQ structured data (rich results + AI answer extraction) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "headline":"WhatsApp Receipt Automation: How SA Small Businesses Ditch the Shoebox",
+      "description":"How WhatsApp receipt automation works for South African small businesses — snap a till slip and it files itself, with the VAT captured for SARS.",
+      "author":{"@type":"Organization","name":"SlipStack"},
+      "publisher":{"@type":"Organization","name":"SlipStack","logo":{"@type":"ImageObject","url":"https://www.slipstack.co.za/logo.png"}},
+      "datePublished":"2026-07-08",
+      "dateModified":"2026-07-08",
+      "mainEntityOfPage":"https://www.slipstack.co.za/blog/whatsapp-receipt-automation-south-africa.html",
+      "image":"https://www.slipstack.co.za/og-image.png"
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Do I need to download an app to scan receipts?","acceptedAnswer":{"@type":"Answer","text":"No. SlipStack works inside WhatsApp and email, which you already have. You snap a photo of a till slip on WhatsApp or forward an invoice PDF to your SlipStack address — there is nothing to install."}},
+        {"@type":"Question","name":"Does WhatsApp receipt automation capture VAT for SARS?","acceptedAnswer":{"@type":"Answer","text":"Yes. SlipStack reads the vendor, date, total and VAT amount off the slip and records the input VAT, so your claimable VAT is captured at the moment you file the receipt rather than reconstructed at year-end."}},
+        {"@type":"Question","name":"Where are my receipts stored?","acceptedAnswer":{"@type":"Answer","text":"In your own Google Drive. SlipStack files the original photo or PDF to a folder you own, so you keep full control of your data — which also keeps you POPIA-friendly."}},
+        {"@type":"Question","name":"Do I need Xero or accounting software?","acceptedAnswer":{"@type":"Answer","text":"No. SlipStack builds a live Google Sheet expense dashboard for every business, on every plan. If you do use Xero or QuickBooks, it can also post each expense there with the receipt attached — but the Sheet works on its own."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="wm">SlipStack</span></a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+<article>
+  <p class="eyebrow">Receipt automation</p>
+  <h1>WhatsApp Receipt Automation: How SA Small Businesses Ditch the Shoebox</h1>
+  <p class="byline">By the SlipStack team · 8 July 2026 · 6 min read</p>
+
+  <p class="lead">If your "filing system" is a shoebox of faded Engen slips and a WhatsApp thread of receipt photos you keep meaning to sort out, you already know the ending: a frantic scramble at year-end and a pile of input VAT you can't prove and won't claim. There's a simpler way, and it runs on the app you use most.</p>
+
+  <p><strong>WhatsApp receipt automation</strong> means exactly what it sounds like: you snap a photo of a till slip on WhatsApp, and software reads it, files it, and logs it for you — no typing, no spreadsheet, no app to download. For a South African small business, sole proprietor or tradesperson, it's the difference between bookkeeping that happens in three seconds at the till and bookkeeping that never happens at all.</p>
+
+  <h2>Why the shoebox costs you real money</h2>
+  <p>Thermal till slips fade — often within a few months. By the time you're doing your VAT201 or handing everything to your accountant, half the ink is gone and the slip is worthless as a tax record. Every faded slip is <strong>input VAT you paid but can't claim back</strong>. On a year of fuel, hardware runs to Builders Warehouse, and stock from Makro, that quietly adds up to thousands of Rands left with SARS.</p>
+  <p>The manual alternative — photographing slips and typing them into a spreadsheet later — fails for the same reason gym memberships do: it relies on a future version of you finding the time. You won't. The only expense system that works is one that finishes the job at the moment the money leaves your pocket.</p>
+
+  <h2>How WhatsApp receipt automation actually works</h2>
+  <p>The whole point is that there's nothing to learn. Here's the full workflow:</p>
+  <ol class="steps">
+    <li><strong>Snap the slip.</strong> Pay for your fuel, take a photo of the slip, and send it to the SlipStack number on WhatsApp — the same way you'd send a photo to a mate.</li>
+    <li><strong>The AI reads it.</strong> Within seconds it extracts the <strong>vendor, date, total and VAT amount</strong> off the slip. If something's unclear, it asks you a quick one-tap question rather than guessing.</li>
+    <li><strong>It files the original.</strong> The photo (or a forwarded invoice PDF) is saved to <strong>your own Google Drive</strong>, named and dated, so the source document is safe forever — long after the thermal ink would have faded.</li>
+    <li><strong>Your dashboard updates itself.</strong> A live Google Sheet fills in with the expense, the running monthly total, and the VAT captured — a cost dashboard that builds itself as you go.</li>
+    <li><strong>It posts to your books (optional).</strong> If you use Xero or QuickBooks, the expense posts straight through with the receipt attached, ready to reconcile against your bank feed.</li>
+  </ol>
+
+  <div class="callout">
+    <p><strong>Forwarding an invoice instead of snapping a slip?</strong> Email-in works the same way. Forward a supplier's PDF invoice to your dedicated SlipStack address and it's captured, filed and posted as a bill — no photo needed.</p>
+  </div>
+
+  <h2>WhatsApp automation vs. the usual options</h2>
+  <p>Most SA small businesses are choosing between four things. Here's the honest comparison:</p>
+  <div class="tbl-scroll">
+  <table class="tbl">
+    <thead>
+      <tr><th>Approach</th><th>Effort per receipt</th><th>Captures VAT?</th><th>Needs an app / training?</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Shoebox of slips</td><td>None now, huge at year-end</td><td>No — ink fades</td><td>No</td></tr>
+      <tr><td>Spreadsheet you type up later</td><td>High (and easy to skip)</td><td>Only if you remember</td><td>No, but tedious</td></tr>
+      <tr><td>Traditional receipt-scanner app</td><td>Medium — open app, scan, tag</td><td>Yes</td><td>Yes — download &amp; learn it</td></tr>
+      <tr><td><strong>WhatsApp automation (SlipStack)</strong></td><td>~3 seconds, at the till</td><td>Yes — read automatically</td><td>No — it's just WhatsApp</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The app-download step matters more than it looks. A receipt-scanner app only helps the people who install it, remember it exists, and keep using it. WhatsApp is already open on your phone — so the habit is free.</p>
+
+  <h2>What about my data and POPIA?</h2>
+  <p>Fair question, and it's the one we get most. Your receipts and the extracted data live in <strong>your own Google Drive folder</strong> — not locked inside someone else's platform. You own the source documents, you can hand your accountant access, and if you ever leave, your records leave with you. Keeping the data under your control is also the cleanest way to stay on the right side of <strong>POPIA</strong>.</p>
+
+  <h2>The bottom line</h2>
+  <p>Receipt admin is never going to be fun, but it can be over in three seconds. If the capture happens the instant you pay — on WhatsApp, with the VAT already recorded and the original safely in your Drive — the shoebox simply never fills up, and year-end stops being a scramble. That's the whole idea behind WhatsApp receipt automation, and it's why it fits a South African small business better than any app you have to be talked into downloading.</p>
+
+  <div class="cta">
+    <h2>Try it on your next slip</h2>
+    <p>Plans from R99/month · 30-day free trial · no credit card needed.</p>
+    <a class="btn" href="/#pricing">Start your free trial</a>
+  </div>
+
+  <h2 class="faq-h">Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary>Do I need to download an app to scan receipts?</summary><p>No. SlipStack works inside WhatsApp and email, which you already have. You snap a photo of a till slip on WhatsApp or forward an invoice PDF to your SlipStack address — there's nothing to install.</p></details>
+    <details><summary>Does WhatsApp receipt automation capture VAT for SARS?</summary><p>Yes. SlipStack reads the vendor, date, total and VAT amount off the slip and records the input VAT, so your claimable VAT is captured the moment you file the receipt — not reconstructed at year-end from faded slips.</p></details>
+    <details><summary>Where are my receipts stored?</summary><p>In your own Google Drive. SlipStack files the original photo or PDF to a folder you own, so you keep full control of your data — which also keeps you POPIA-friendly.</p></details>
+    <details><summary>Do I need Xero or accounting software?</summary><p>No. SlipStack builds a live Google Sheet expense dashboard for every business, on every plan. If you do use Xero or QuickBooks, it can also post each expense there with the receipt attached — but the Sheet works on its own.</p></details>
+  </div>
+</article>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 SlipStack · Hout Bay, Cape Town</span>
+    <span><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/privacy.html">Privacy</a> · <a href="/blog/feed.xml">RSS</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
